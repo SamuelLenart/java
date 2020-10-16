@@ -30,5 +30,18 @@ public class Ball {
         }
         System.out.println("Count of bounces: " + i);
     }
+    public void fraction() {
+        int c = 80;
+        int m = 24;
+        int i = 2;
+        while (c >= 1 && m >= 1) {
+            if (c % 1 == 0 && m % 1 == 0) {
+                c = c / 1;
+                m = m / 1;
+            } else
+                i++;
+        }
+        System.out.println(c + " " + m);
+    }
 }
 
