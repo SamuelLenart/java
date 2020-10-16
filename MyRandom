@@ -1,0 +1,44 @@
+package sk.kosickaakademia.lenart.projectmath.homework;
+
+import java.util.Scanner;
+
+public class MyRandom {
+    public static void main(String[] args) {
+        MyRandom myRandom=new MyRandom();
+        myRandom.guessnumber();
+    }
+
+    public void guessnumber() {
+        int randomNumber=(int)(Math.random()*100 +1);
+        Scanner sc =new Scanner(System.in);
+        int guess;
+        do {
+            System.out.println("Enter your guess: ");
+            guess = sc.nextInt();
+            if(guess==randomNumber)
+                System.out.println("Congratulations, you won!");
+            else if (guess<randomNumber) {
+                System.out.println("Try a bigger number");
+            }
+            else
+                System.out.println("Try a smaller number");
+        }
+        while (guess!=randomNumber);
+    }
+    public void multiplier(int max) {
+        Scanner sc = new Scanner(System.in);
+        int guess;
+        int right = 0;
+        for (int i = 0; i < 10; i++) {
+            int a = (int) (Math.random()*max +1);
+            int b = (int) (Math.random()*max +1);
+            System.out.print(a + " * " + b + " ?= ");
+            guess = sc.nextInt();
+            if (guess == (a*b)) {
+                right -= -1;
+            }
+        }
+        System.out.println("Congratulations! You scored " +  + right + " / 10. So you have " + right*10 + "%");
+    }
+}
+
