@@ -1,0 +1,30 @@
+package sk.kosickaakademia.lenart.projectmath.homework;
+
+public class MyArray {
+
+    public static void main(String[] args) {
+        int[] a = new int[] {15, 7, 12, 98, 14, 25, 38, 74, 152, 87, 64, 0, 12, 54, 98, 1};
+        MyArray myArray=new MyArray();
+        int[] b=myArray.selectPairValues(a);
+        int lenB=b.length;
+        for(int j=0;j<lenB;j++)
+            System.out.println(b[j]+" ");
+    }
+
+    public int[] selectPairValues(int[] a) {
+        int lenA=a.length;
+        int countPair=0;
+        int i, j = 0;
+        for(i=0;i<lenA;i++) {
+            if(a[i]%2==0)
+                countPair++;
+        }
+        int[] b=new int[countPair];
+        for(i=0;i<lenA;i++) {
+            if(a[i]%2==0) {
+                b[j++]=a[i];
+            }
+        }
+        return b;
+    }
+}
