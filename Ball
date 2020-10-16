@@ -1,0 +1,34 @@
+package sk.kosickaakademia.lenart.projectmath.homework;
+
+
+
+public class Ball {
+    public static void main(String[] args) {
+        Ball test = new Ball();
+        test.Count(200, 0.9);
+        test.InShort(20,30);
+
+    }
+    public void InShort(int reader, int denominator){
+        System.out.println("Original fraction: " + reader + "/" + denominator);
+        int min = Math.min(reader, denominator);
+        for (int i=2; i<=min; i++){
+            if(reader%i==0 && denominator%i==0){
+                reader=reader/i;
+                denominator=denominator/i;
+            }
+        }
+        System.out.println("Resulting fraction: " + reader +"/" + denominator);
+    }
+
+    public void Count(double height, double coefficient){
+        double a = height;
+        int i = 0;
+        while (a>height/2){
+            a=a*coefficient;
+            i++;
+        }
+        System.out.println("Count of bounces: " + i);
+    }
+}
+
