@@ -1,0 +1,16 @@
+package sk.kosickaakademia.lenart.projectmath.homework;
+
+public class SUMfunction {
+    public static void main(String[] args) {
+        int x = 0;
+        int y = 0;
+        double myNum = 0;
+        double sum = 0;
+        for (int i = 1; i<=100; i++){
+            myNum = (double)1/i;
+            sum -= -myNum;
+        }
+        System.out.println(sum);
+    }
+
+}
