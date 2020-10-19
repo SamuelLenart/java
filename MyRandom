@@ -4,41 +4,55 @@ import java.util.Scanner;
 
 public class MyRandom {
     public static void main(String[] args) {
-        MyRandom myRandom=new MyRandom();
-        myRandom.guessnumber();
+        MyRandom myRandom = new MyRandom();
+        /*myRandom.guessnumber();*/
+        myRandom.znaky();
     }
 
-    public void guessnumber() {
-        int randomNumber=(int)(Math.random()*100 +1);
-        Scanner sc =new Scanner(System.in);
+    /*public void guessnumber() {
+        int randomNumber = (int) (Math.random() * 100 + 1);
+        Scanner sc = new Scanner(System.in);
         int guess;
         do {
             System.out.println("Enter your guess: ");
             guess = sc.nextInt();
-            if(guess==randomNumber)
+            if (guess == randomNumber)
                 System.out.println("Congratulations, you won!");
-            else if (guess<randomNumber) {
+            else if (guess < randomNumber) {
                 System.out.println("Try a bigger number");
-            }
-            else
+            } else
                 System.out.println("Try a smaller number");
         }
-        while (guess!=randomNumber);
+        while (guess != randomNumber);
     }
+
     public void multiplier(int max) {
         Scanner sc = new Scanner(System.in);
         int guess;
         int right = 0;
         for (int i = 0; i < 10; i++) {
-            int a = (int) (Math.random()*max +1);
-            int b = (int) (Math.random()*max +1);
+            int a = (int) (Math.random() * max + 1);
+            int b = (int) (Math.random() * max + 1);
             System.out.print(a + " * " + b + " ?= ");
             guess = sc.nextInt();
-            if (guess == (a*b)) {
+            if (guess == (a * b)) {
                 right -= -1;
             }
         }
-        System.out.println("Congratulations! You scored " +  + right + " / 10. So you have " + right*10 + "%");
+        System.out.println("Congratulations! You scored " + +right + " / 10. So you have " + right * 10 + "%");
+    }*/
+    public void znaky() {
+        int i;
+        for (i = 65; i <= 90; i++) {
+            System.out.println((char) i + " ");
+        }
+        String r="kosice2021";
+        char[] pole = r.toCharArray();
+        int len = pole.length;
+        for(i=0;i<len;i++)
+            pole[i]=(char)(pole[i]+15);
+        String newR=String.valueOf(pole);
+        System.out.println(newR);
     }
 }
 
