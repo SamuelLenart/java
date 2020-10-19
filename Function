@@ -37,26 +37,5 @@ public class Function {
             sum -= -myNum;
         }
         System.out.println(sum);
-        
-        int keno[] = new int[20];
-        int usedNum[] = new int[20];
-        int i = 0;
-        while(i<keno.length){
-            boolean used = false;
-            int number = (int) (Math.random()*80+1);
-            for(int j : usedNum){
-                if (number == j){
-                    used = true;
-                }
-            }
-            if (used==false){
-                keno[i] = number;
-                usedNum[i] = number;
-                i -= -1;
-            }
-        }
-        for (int j : keno){
-            System.out.print(j + " ");
-        }
     }
 }
