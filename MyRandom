@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class MyRandom {
     public static void main(String[] args) {
         MyRandom myRandom = new MyRandom();
-        /*myRandom.guessnumber();*/
-        myRandom.znaky();
+        //myRandom.guessnumber();
+        //myRandom.znaky();
+        System.out.println(myRandom.Ceasar("Dnes je PONDelok 19.10.2020 #!?+"));
     }
 
     /*public void guessnumber() {
@@ -46,7 +47,7 @@ public class MyRandom {
         for (i = 65; i <= 90; i++) {
             System.out.println((char) i + " ");
         }
-        String r="kosice2021";
+        String r="kosice2021z";
         char[] pole = r.toCharArray();
         int len = pole.length;
         for(i=0;i<len;i++)
@@ -54,5 +55,72 @@ public class MyRandom {
         String newR=String.valueOf(pole);
         System.out.println(newR);
     }
-}
+    public String Ceasar(String text) {
+        int len = text.length();
+        String sifra="";
+        int i;
+        for(i=0;i<len; i++){
+            char z=text.charAt(i);
+            if(z>='A' && z<='Z'){
+                z=(char)(z+3);
+                if(z>'Z')
+                    z=(char)(z-26);
+            }
+            else if(z>='a' && z<='z'){
+                z=(char)(z+3);
+                if(z>'z')
+                    z=(char)(z-26);
+            }
+            else if(z>='0' && z<='9'){
+                z=(char)(z+3);
+                if(z>'9')
+                    z=(char)(z-10);
+            }
+            sifra=sifra+z;
+        }
+        return sifra;
+    }
+    //vypise:
+    //pocet malych pismen
+    //pocet velkych pismen
+    //pocet cislic
+    //pocet medzier
+    //pocet viet . ! ?
+    public void textAnalyzer(String text) {
+        int small = 0;
+        int big = 0;
+        int digit = 0;
+        int space = 0;
+        int sentence = 0;
+
+        for (int i=0; i<text.length();i++) {
+            char z = text.charAt(i);
+            if (z>='A' && z<='Z') {
+                big = -1;
+            }
+            if (z>='a' && z<='z'){
+                small = -1;
+            }
+            if (z>='0' && z<='9'){
+                digit = -1;
+            }
+            if (z==' '){
+                space = -1;
+            }
+            if (z=='.' || z=='!' || z=='?'){
+                sentence = -1;
+            }
+            System.out.println("Number of small letters: \033[32m" + small + "\033[0m");
+            System.out.println("Number of big letters: \033[31m" + big + "\033[0m");
+            System.out.println("Number of digits: \033[33m" + digit + "\033[0m");
+            if (space==0){
+                System.out.println("Number of words: \033[35m1\033[0m");
+            }
+            else{
+                System.out.println("Number of words: \033[34m" + (int)(space+1) + "\033[0m");
+            }
+            System.out.println("Number of sentences: \033[34m" + sentence + "\033[0m");
+        }
+        }
+    }
 
