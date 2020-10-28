@@ -4,12 +4,15 @@ package sk.kosickaakademia.lenart.school;
 public class Main {
     public static void main(String[] args) {
         GPA gradeS1 = new GPA(3, 2, 2);
+        GPA gradeS2 = new GPA(1, 4, 3);
+        GPA gradeS3 = new GPA(2, 5, 1);
+        GPA gradeS4 = new GPA(3, 2, 1);
         Student s1 = new Student("Marek", "Baca", gradeS1, ClassName.N1);
 
-        Student s2 = new Student("Richard", "Bacmag", null, ClassName.N2);
+        Student s2 = new Student("Richard", "Bacmag", gradeS2, ClassName.N2);
 
-        Student s3 = new Student("Samuel", "Samsom", null, ClassName.N3);
+        Student s3 = new Student("Samuel", "Samsom", gradeS3, ClassName.N3);
 
-        Student s4 = new Student("Kristian", "Matej", null, ClassName.N1);
+        Student s4 = new Student("Kristian", "Matej", gradeS4, ClassName.N1);
     }
 }
