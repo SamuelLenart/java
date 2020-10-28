@@ -1,0 +1,15 @@
+package sk.kosickaakademia.lenart.school;
+
+
+public class Main {
+    public static void main(String[] args) {
+        GPA gradeS1 = new GPA(3, 2, 2);
+        Student s1 = new Student("Marek", "Baca", gradeS1, ClassName.N1);
+
+        Student s2 = new Student("Richard", "Bacmag", null, ClassName.N2);
+
+        Student s3 = new Student("Samuel", "Samsom", null, ClassName.N3);
+
+        Student s4 = new Student("Kristian", "Matej", null, ClassName.N1);
+    }
+}
