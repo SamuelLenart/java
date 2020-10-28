@@ -1,13 +1,13 @@
 package sk.kosickaakademia.lenart.school;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Student {
     private String firstName;
     private String lastName;
     private ClassName className;
     private int salary;
-    private Date birth;
+    private LocalDate dob;
     private GPA grades;   //GPA = trieda, typ; grades = premenna
 
     //metody
@@ -16,14 +16,15 @@ public class Student {
         this.lastName=lastName;
         this.grades=grades;
         this.className=className;
+
     }
 
     public void setSalary(int salary) {
         this.salary = salary;
     }
 
-    public void setBirth(Date birth) {
-        this.birth = birth;
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
     }
 
     public String getFirstName() {
@@ -42,8 +43,8 @@ public class Student {
         return salary;
     }
 
-    public Date getBirth() {
-        return birth;
+    public LocalDate getDob() {
+        return dob;
     }
 
     public GPA getGrades() {
