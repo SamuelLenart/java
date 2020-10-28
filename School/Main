@@ -12,22 +12,22 @@ public class Main {
         GPA gradeS4 = new GPA(3, 2, 1);
         Student s1 = new Student("Marek", "Baca", gradeS1, ClassName.N1);
         LocalDate datum = LocalDate.of(2000,Month.APRIL, 9);
-        s1.setBirth(datum);
-        System.out.println("Name: "+s1.getFirstName()+"born"+s1.getBirth());
+        s1.setDob (datum);
+        System.out.println("Name: "+s1.getFirstName()+" Born: "+s1.getDob());
 
         Student s2 = new Student("Richard", "Bacmag", gradeS2, ClassName.N2);
-        LocalDate datum = LocalDate.of(1999,Month.JUNE, 1);
-        s2.setBirth(datum);
-        System.out.println("Name: "+s2.getFirstName()+"born"+s2.getBirth());
+        datum = LocalDate.of(1999, Month.JUNE, 1);
+        s2.setDob (datum);
+        System.out.println("Name: "+s2.getFirstName()+" Born: "+s2.getDob());
 
         Student s3 = new Student("Samuel", "Samsom", gradeS3, ClassName.N3);
-        LocalDate datum = LocalDate.of(1998,Month.SEPTEMBER, 15);
-        s3.setBirth(datum);
-        System.out.println("Name: "+s3.getFirstName()+"born"+s3.getBirth());
+        datum = LocalDate.of(1998, Month.SEPTEMBER, 15);
+        s3.setDob (datum);
+        System.out.println("Name: "+s3.getFirstName()+" Born: "+s3.getDob());
 
         Student s4 = new Student("Kristian", "Matej", gradeS4, ClassName.N1);
-        LocalDate datum = LocalDate.of(2000,Month.MAY, 20);
-        s4.setBirth(datum);
-        System.out.println("Name: "+s4.getFirstName()+"born"+s4.getBirth());
+        datum = LocalDate.of(2000, Month.MAY, 20);
+        s4.setDob (datum);
+        System.out.println("Name: "+s4.getFirstName()+" Born: "+s4.getDob());
     }
 }
