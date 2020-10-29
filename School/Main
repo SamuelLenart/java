@@ -1,33 +1,71 @@
 package sk.kosickaakademia.lenart.school;
 
 
+import javax.print.attribute.standard.Finishings;
 import java.time.LocalDate;
 import java.time.Month;
 
 public class Main {
     public static void main(String[] args) {
+
         GPA gradeS1 = new GPA(3, 2, 2);
         GPA gradeS2 = new GPA(1, 4, 3);
         GPA gradeS3 = new GPA(2, 5, 1);
         GPA gradeS4 = new GPA(3, 2, 1);
+        GPA gradeS5 = new GPA(3,3,3);
+        GPA gradeS6 = new GPA(2,1,3);
+        GPA gradeS7 = new GPA(1,4,2);
+        GPA gradeS8 = new GPA(2,1,3);
+        GPA gradeS9 = new GPA(4,1,3);
+        GPA gradeS10 = new GPA(4,4,4);
         Student s1 = new Student("Marek", "Baca", gradeS1, ClassName.N1);
         LocalDate datum = LocalDate.of(2000,Month.APRIL, 9);
         s1.setDob (datum);
-        System.out.println("Name: "+s1.getFirstName()+" Born: "+s1.getDob());
+        System.out.println("Name: "+s1.getFirstName()+" "+s1.getLastName()+", Born: "+s1.getDob()+", "+s1.getGrades());
 
-        Student s2 = new Student("Richard", "Bacmag", gradeS2, ClassName.N2);
+        Student s2 = new Student("Richard", "Bacbag", gradeS2, ClassName.N2);
         datum = LocalDate.of(1999, Month.JUNE, 1);
         s2.setDob (datum);
-        System.out.println("Name: "+s2.getFirstName()+" Born: "+s2.getDob());
+        System.out.println("Name: "+s2.getFirstName()+" "+s2.getLastName()+", Born: "+s2.getDob()+", "+s2.getGrades());
 
         Student s3 = new Student("Samuel", "Samsom", gradeS3, ClassName.N3);
         datum = LocalDate.of(1998, Month.SEPTEMBER, 15);
         s3.setDob (datum);
-        System.out.println("Name: "+s3.getFirstName()+" Born: "+s3.getDob());
+        System.out.println("Name: "+s3.getFirstName()+" "+s3.getLastName()+", Born: "+s3.getDob()+", "+s3.getGrades());
 
         Student s4 = new Student("Kristian", "Matej", gradeS4, ClassName.N1);
-        datum = LocalDate.of(2000, Month.MAY, 20);
+        datum = LocalDate.of(2000, Month.MAY, 21);
         s4.setDob (datum);
-        System.out.println("Name: "+s4.getFirstName()+" Born: "+s4.getDob());
+        System.out.println("Name: "+s4.getFirstName()+" "+s4.getLastName()+", Born: "+s4.getDob()+", "+s4.getGrades());
+
+        Student s5 = new Student("Matej", "Dlhy", gradeS5, ClassName.N3);
+        datum = LocalDate.of(1998, Month.NOVEMBER, 28);
+        s5.setDob (datum);
+        System.out.println("Name: "+s5.getFirstName()+" "+s5.getLastName()+", Born: "+s5.getDob()+", "+s5.getGrades());
+
+        Student s6 = new Student("Martin", "Olencin", gradeS6, ClassName.N3);
+        datum = LocalDate.of(1998, Month.OCTOBER, 11);
+        s6.setDob (datum);
+        System.out.println("Name: "+s6.getFirstName()+" "+s6.getLastName()+", Born: "+s6.getDob()+", "+s6.getGrades());
+
+        Student s7 = new Student("Jozef", "Holly", gradeS7, ClassName.N1);
+        datum = LocalDate.of(2000, Month.FEBRUARY, 28);
+        s7.setDob (datum);
+        System.out.println("Name: "+s7.getFirstName()+" "+s7.getLastName()+", Born: "+s7.getDob()+", "+s7.getGrades());
+
+        Student s8 = new Student("Samuel", "Rozsypany", gradeS8, ClassName.N2);
+        datum = LocalDate.of(1999, Month.MARCH, 17);
+        s8.setDob (datum);
+        System.out.println("Name: "+s8.getFirstName()+" "+s8.getLastName()+", Born: "+s8.getDob()+", "+s8.getGrades());
+
+        Student s9 = new Student("Erika", "Matasova", gradeS9, ClassName.N2);
+        datum = LocalDate.of(1999, Month.JULY, 4);
+        s9.setDob (datum);
+        System.out.println("Name: "+s9.getFirstName()+" "+s9.getLastName()+", Born: "+s9.getDob()+", "+s9.getGrades());
+
+        Student s10= new Student("Martina", "Sklovovska", gradeS10, ClassName.N1);
+        datum = LocalDate.of(2000, Month.AUGUST, 18);
+        s10.setDob (datum);
+        System.out.println("Name: "+s10.getFirstName()+" "+s10.getLastName()+", Born: "+s10.getDob()+", "+s10.getGrades());
     }
 }
