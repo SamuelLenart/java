@@ -31,6 +31,18 @@ public class Main {
         System.out.println("Sort and print:");
         printAllStudents(students);
 
+
+        Book b1 = new Book("Pan prstenov","J.R.R. Tolkien");
+        students[0].addHobby(b1);
+        Sport s1=new Sport("Basketball");
+        students[0].addHobby(s1);
+        Book b2 = new Book("Zaklinac", "A. Sabkowski");
+        students[0].addHobby(b2);
+        students[0].printHobbies();
+        Movie m1 = new Movie("Borat 2",2020);
+        students[0].addHobby(m1);
+
+        students[0].printHobbies();
     }
 
     private static void printAllStudents(Student[] students) {
@@ -192,23 +204,22 @@ public class Main {
         int mesiac;
         int den;
         for(int i = 0; i < studenti.length; i++){
-            if(studenti[i].getDob() != null){
+            if(studenti[i].getDob() != null) {
                 String datum = convertDateToString(studenti[i].getDob());
                 int datumovecislo = cisloDokopy(datum);
                 //System.out.println(datumovecislo);
-                rok = datumovecislo/10000;
-                mesiac = (datumovecislo-rok*10000)/100;
-                den = datumovecislo%100;
-                if(mesiac == todaysMonth && todaysDay < den){
-                    System.out.println(studenti[i].getFirstName()+ " " + studenti[i].getLastName()
-                            + " ma " + ((todaysYear-rok)-1) + " rokov");
-                }else{
-                    System.out.println(studenti[i].getFirstName()+ " " + studenti[i].getLastName()
-                            + " ma " + (todaysYear-rok) + " rokov");
+                rok = datumovecislo / 10000;
+                mesiac = (datumovecislo - rok * 10000) / 100;
+                den = datumovecislo % 100;
+                if (mesiac == todaysMonth && todaysDay < den) {
+                    System.out.println(studenti[i].getFirstName() + " " + studenti[i].getLastName()
+                            + " ma " + ((todaysYear - rok) - 1) + " rokov");
+                } else {
+                    System.out.println(studenti[i].getFirstName() + " " + studenti[i].getLastName()
+                            + " ma " + (todaysYear - rok) + " rokov");
                 }
 
             }
-            //System.out.println();
         }
 
     }
