@@ -11,21 +11,37 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args) {
 
-        Student[] studenti;
-        studenti = Main.vytvorStudentov();
+        Student[] students;
+        students = Main.vytvorStudentov();
 
-        Main.printN1Student(studenti);
+        Main.printN1Student(students);
         System.out.println();
 
-        Main.printStudentsWhereAverageLE2(studenti);
+        Main.printStudentsWhereAverageLE2(students);
         System.out.println();
 
-        Main.printStudentsWhereYearIsMoreThan2000(studenti);
+        Main.printStudentsWhereYearIsMoreThan2000(students);
         System.out.println();
 
-        Main.printAge(studenti);
+        Main.printAge(students);
         System.out.println();
 
+        sortByAverage(students);
+        System.out.println("---------------------------------");
+        System.out.println("Sort and print:");
+        printAllStudents(students);
+
+    }
+
+    private static void printAllStudents(Student[] students) {
+        int i;
+        int len=students.length;
+        System.out.println("List of students - 1N :");
+        for(i=0;i<len;i++){
+
+            System.out.println(students[i].toString());
+        }
+        System.out.println();
     }
 
     private static Student[] vytvorStudentov() {
@@ -78,6 +94,20 @@ public class Main {
         s[9] = s10;
 
         return s;
+    }
+    private static void sortByAverage(Student[] students) {
+        int len=students.length;
+        for(int i = 0;i<=len-1;i++){
+            for(int j=0; j< len-1-i;j++){
+                if(students[j].getGrades().getAverage()>students[j+1].getGrades().getAverage()){
+                    // ak podmienka plati, je potrebne vymenit A[j] <-> A[j+1]
+                    Student temp = students[j];
+                    students[j]=students[j+1];
+                    students[j+1] = temp;
+
+                }
+            }
+        }
     }
 
     private static void printStudentsWhereYearIsMoreThan2000(Student[] studenti) {
@@ -196,7 +226,6 @@ public class Main {
     }
 
     private static void zoradStudentov(Student[] studenti){
-        //Student[] zoradeniStudenti = new Student[studenti.length];
         double[] priemerStudentov = new double[studenti.length];
         double priemer;
 
