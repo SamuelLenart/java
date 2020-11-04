@@ -3,7 +3,7 @@ package sk.kosickaakademia.lenart.school;
 import sk.kosickaakademia.lenart.school.hobby.Book;
 import sk.kosickaakademia.lenart.school.hobby.Hobby;
 import sk.kosickaakademia.lenart.school.hobby.Movie;
-import sk.kosickaakademia.lenart.school.pet.Animal;
+import sk.kosickaakademia.lenart.school.pet.*;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -28,7 +28,22 @@ public class Student {
         hobbies = new Hobby[5];
         countHobbies=0;
     }
-
+    public void printAnimal() {
+        if (myAnimal == null) {
+            System.out.println(firstName + " " + lastName + " nema domace zvieratko");
+        } else if (myAnimal instanceof Fish) {
+            System.out.println(firstName + " " + lastName + " chova " + ((Fish) myAnimal).getCount() + " rybyciek");
+        } else if (myAnimal instanceof Dog) {
+            System.out.println(firstName + " " + lastName + " chova psa " + ((Dog) myAnimal).getName() + " ,plemeno " + ((Dog) myAnimal).getRace());
+        } else if (myAnimal instanceof Cat) {
+            System.out.println(firstName + " " + lastName + " chova macku " + ((Cat) myAnimal).getName() + " ,plemeno " + ((Cat) myAnimal).getRace());
+        } else if (myAnimal instanceof Turtle) {
+            System.out.println(firstName + " " + lastName + " chova korytnacku " + ((Turtle) myAnimal).getName());
+        }
+    }
+    public Animal getMyAnimal() {
+        return myAnimal;
+    }
     public void setMyAnimal(Animal myAnimal) {
         this.myAnimal = myAnimal;
     }
