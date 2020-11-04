@@ -1,17 +1,13 @@
 package sk.kosickaakademia.lenart.school.pet;
 
+import java.util.Date;
+
 public class Turtle implements Animal{
-    String name;
+    private String name;
+    private Date dob;
 
-    public Turtle(){
-
-    }
-
-    public void setName(String name) {
+    public Turtle(String name) {
         this.name = name;
-    }
 
-    public String getName() {
-        return name;
     }
 }
