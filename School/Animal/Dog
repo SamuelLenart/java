@@ -1,17 +1,13 @@
 package sk.kosickaakademia.lenart.school.pet;
 
+import java.util.Date;
+
 public class Dog implements Animal{
-    String name;
+    private String name;
+    private String race;
 
-    public Dog() {
-
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name=name;
+    public Dog(String name, String race) {
+        this.name = name;
+        this.race = race;
     }
 }
