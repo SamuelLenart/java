@@ -2,12 +2,11 @@ package sk.kosickaakademia.lenart.school.pet;
 
 public class Fish implements Animal{
     int count;
+    private String name;
 
-
-    public Fish(){
-
+    public Fish(String name){
+        this.name=name;
     }
-
     public void setCount(int count) {
         this.count = count;
     }
