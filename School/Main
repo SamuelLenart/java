@@ -1,6 +1,13 @@
 package sk.kosickaakademia.lenart.school;
 
 
+import sk.kosickaakademia.lenart.school.hobby.Book;
+import sk.kosickaakademia.lenart.school.hobby.Movie;
+import sk.kosickaakademia.lenart.school.hobby.Sport;
+import sk.kosickaakademia.lenart.school.pet.Cat;
+import sk.kosickaakademia.lenart.school.pet.Dog;
+import sk.kosickaakademia.lenart.school.pet.Turtle;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -43,6 +50,12 @@ public class Main {
         students[0].addHobby(m1);
 
         students[0].printHobbies();
+
+        students[0].setMyAnimal(new Dog("Arny","Madarska vyzla"));
+
+        students[1].setMyAnimal(new Cat("Filip","Perzska macka"));
+
+        students[2].setMyAnimal(new Turtle("Marko"));
     }
 
     private static void printAllStudents(Student[] students) {
